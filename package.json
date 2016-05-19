@@ -1,0 +1,30 @@
+{
+  "name": "notsoclevercow",
+  "version": "1.0.0",
+  "description": "api amusement",
+  "main": "main.html",
+  "dependencies": {
+    "cleverbot.io": "^1.0.4",
+    "gulp": "^3.9.1",
+    "gulp-connect": "^4.0.0",
+    "gulp-inject": "^4.0.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-open": "^2.0.0",
+    "gulp-util": "^3.0.7",
+    "wiredep": "^4.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JiMinJun/NotSoCleverCow.git"
+  },
+  "author": "Ji-Min Gloria Jun",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JiMinJun/NotSoCleverCow/issues"
+  },
+  "homepage": "https://github.com/JiMinJun/NotSoCleverCow#readme"
+}

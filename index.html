@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="CleverCowApp">
+    <head>
+        <meta charset="UTF-8">
+        <title>Not so Clever Cow</title>
+        <!-- bower:css -->
+        <!-- endbower -->
+
+        <!-- inject:css -->
+        <!-- endinject -->
+        <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.css">
+        <link rel="stylesheet" type="text/css" href="styles/main.css">
+        <link href='https://fonts.googleapis.com/css?family=Cutive+Mono' rel='stylesheet' type='text/css'>
+    </head>
+
+    <body ng-controller="CleverCowCtrl as vm">
+
+        <div class="container">
+            <div class="jumbotron">
+                <h2 class="text-center">Not So Clever Bot</h2> 
+            </div>
+                      
+              <!-- Panel Chat -->
+              <div class="container vertical-center" id="chatBox">
+                <div class="row">
+
+                    <form  ng-hide="chatStarted === true">
+                        <div class="input-group">
+                            <input class="form-control" type="text" placeholder="Enter text" ng-model="vm.entry">
+                            <span class="input-group-btn"><button type="submit" class="btn btn-primary" ng-click="vm.askBot(vm.entry); chatStarted = true">Enter</button></span>
+                        </div>
+                    </form>
+                        <div class="panel panel-primary" ng-show="chatStarted === true">
+                            <div class="panel-heading">
+                                <span class="glyphicon glyphicon-comment"></span> Chat
+                            </div>
+                            <div class="panel-body"> 
+                                <ul class="chat" >
+                                    <li ng-class="{ 'left clearfix': $even, 'right clearfix': $odd }" ng-repeat="chat in vm.chatLog track by $index">
+                                        <div class="chat-body clearfix" >
+                                            <p>
+                                                {{chat}}
+                                            </p>
+                                        </div>
+                                    </li>
+                                </ul>
+                                <br/>                                           
+                               </div>
+                            <div class="panel-footer">
+                                <pre class="pull-center">{{vm.cowResponse}}</pre>
+                                <form>
+                                    <div class="input-group">
+                                        <input type="text" placeholder="Enter text" ng-model="vm.entry" id="btn-input" class="form-control input-sm" >
+                                        <span class="input-group-btn">
+                                            <button type="submit" ng-click="vm.askBot(vm.entry)" class="btn btn-primary btn-sm" id="btn-chat">Enter</button>
+                                        </span>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+                    
+                </div>
+            </div>
+              <!-- End Panel Chat -->
+
+
+        </div>
+
+        <!-- bower:js -->
+        <script src="bower_components/angular/angular.js"></script>
+        <script src="bower_components/jquery/dist/jquery.js"></script>
+        <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+        <!-- endbower -->
+        <script src="http://code.responsivevoice.org/responsivevoice.js"></script>
+
+        <!-- inject:js -->
+        <script src="/app/app.js"></script>
+        <script src="/app/clevercow.ctrl.js"></script>
+        <script src="/app/clevercow.factory.js"></script>
+        <!-- endinject -->
+    </body>
+</html>
